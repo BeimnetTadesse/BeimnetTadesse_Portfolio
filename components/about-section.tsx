@@ -75,7 +75,7 @@ export function AboutSection() {
               {/* Main image container */}
               <div className="relative bg-card rounded-2xl p-2 shadow-card">
                 <img
-                  src="/photo2(2).png"
+                  src="/photo2.png"
                   alt="Beimnet Ashenafi"
                   className="rounded-xl w-full max-w-md mx-auto shadow-warm transform transition-transform duration-700 group-hover:scale-105"
                 />

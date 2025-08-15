@@ -92,7 +92,7 @@ export function HeroSection() {
         >
           <Sparkles className="h-4 w-4 text-secondary/40" />
         </div>
-        <div className="absolute top-2/3 left-1/3 animate-pulse-glow" style={{ animationDelay: "2s" }}>
+        <div className="absolute top-1/3 left-1/3 animate-pulse-glow" style={{ animationDelay: "2s" }}>
   <Zap className="h-5 w-5 text-accent/35" />
 </div>
       </div>
@@ -184,7 +184,7 @@ export function HeroSection() {
                 <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
 
                 <img
-                  src="/photo(2).png"
+                  src="/photo.png"
                   alt="Beimnet Tadesse"
                   className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
