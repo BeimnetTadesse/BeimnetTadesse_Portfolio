@@ -7,7 +7,7 @@ export function ProjectsSection() {
     {
       title: "Mekrez",
       description: "A modern school webiste for Mekrez Academy built with Next.js and Tailwind CSS",
-      image: "/mekrez.png",
+      image: "/mekrez2.png",
       liveUrl: "https://mekrez.vercel.app/",
       githubUrl: "https://github.com/BeimnetTadesse/Mekrez",
       featured: false
@@ -15,7 +15,7 @@ export function ProjectsSection() {
     {
       title: "Adey Crochet",
       description: "A crochet project website built with React and Tailwind",
-      image: "/adey.png",
+      image: "/adey2.png",
       liveUrl: "https://adey-crochet.vercel.app",
       githubUrl: "https://github.com/BeimnetTadesse/Adey_Crochet",
       featured: true
@@ -23,7 +23,7 @@ export function ProjectsSection() {
     {
       title: "Kaptan",
       description: "A modern marketing agency website built with React and Tailwind",
-      image: "/kaptan.png",
+      image: "/kaptan2.png",
       liveUrl: "https://kaptan.vercel.app/",
       githubUrl: "https://github.com/BeimnetTadesse/Kaptan",
       featured: false
