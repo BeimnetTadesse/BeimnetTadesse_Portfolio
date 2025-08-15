@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* 1️⃣ Include Tailwind layers first */
+@tailwind utilities;
+
+/* 2️⃣ Then add your custom CSS and variables */
+@layer base {
+  :root {
+    --background: 40 50% 96%;
+    --foreground: 25 45% 18%;
+    --primary: 25 35% 28%;
+    --secondary: 30 25% 52%;
+    --gradient-warm: linear-gradient(135deg, hsl(40 50% 96%), hsl(40 40% 94%), hsl(35 40% 85%));
+    --gradient-brown: linear-gradient(135deg, hsl(25 35% 28%), hsl(30 25% 52%));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .bg-primary { background-color: hsl(var(--primary)); }
+  .bg-secondary { background-color: hsl(var(--secondary)); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .bg-gradient-brown { background: var(--gradient-brown); }
+  .text-primary { color: hsl(var(--primary)); }
+  .text-secondary { color: hsl(var(--secondary)); }
+}
