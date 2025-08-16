@@ -29,10 +29,8 @@ export function HeroSection() {
       rel="noopener noreferrer"
       className="group relative p-3 rounded-full bg-card/80 backdrop-blur-sm text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 shadow-card hover:shadow-glow transform hover:scale-110 border border-border/30 overflow-hidden"
     >
-      {/* Shimmer effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       <div className="relative z-10">{children}</div>
-      {/* Glow effect */}
       <div className="absolute -inset-2 bg-gradient-brown rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
     </a>
   );
@@ -48,17 +46,14 @@ export function HeroSection() {
       onClick={onClick}
       className="group relative flex items-center px-8 py-3 rounded-full bg-gradient-brown text-primary-foreground font-semibold tracking-wide shadow-warm hover:shadow-glow transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
     >
-      {/* Shimmer effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       <div className="relative z-10 flex items-center">{children}</div>
     </button>
   );
 
   return (
-<section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0">
-      {/* Enhanced Background Elements */}
+    <section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0">
       <div className="absolute inset-0 pointer-events-none">
-        {/* Floating orbs */}
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full animate-float blur-xl" />
         <div
           className="absolute top-40 right-32 w-32 h-32 bg-secondary/5 rounded-full animate-float blur-lg"
@@ -72,8 +67,6 @@ export function HeroSection() {
           className="absolute top-1/2 right-20 w-24 h-24 bg-primary/3 rounded-full animate-float blur-md"
           style={{ animationDelay: "1s" }}
         />
-
-        {/* Geometric patterns */}
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 h-full">
             {Array.from({ length: 144 }).map((_, i) => (
@@ -81,39 +74,35 @@ export function HeroSection() {
             ))}
           </div>
         </div>
-
-        {/* Sparkle effects */}
-        <div className="absolute top-1/4 left-1/4 animate-pulse-glow">
+        <div className="hidden md:block absolute top-1/4 left-1/4 animate-pulse-glow">
           <Star className="h-6 w-6 text-primary/30" />
         </div>
         <div
-          className="absolute top-3/4 right-1/4 animate-pulse-glow"
+          className="hidden md:block absolute top-3/4 right-1/4 animate-pulse-glow"
           style={{ animationDelay: "1s" }}
         >
           <Sparkles className="h-4 w-4 text-secondary/40" />
         </div>
-        <div className="absolute top-1/3 left-1/3 animate-pulse-glow" style={{ animationDelay: "2s" }}>
-  <Zap className="h-5 w-5 text-accent/35" />
-</div>
+        <div
+          className="hidden md:block absolute top-1/3 left-1/3 animate-pulse-glow"
+          style={{ animationDelay: "2s" }}
+        >
+          <Zap className="h-5 w-5 text-accent/35" />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 z-10">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] items-center gap-12 lg:gap-24">
-          {/* Left Side: Enhanced Text Content */}
           <div className="text-center md:text-left space-y-6">
-            {/* Name with enhanced styling */}
             <div className="relative animate-slide-up">
               <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight relative">
                 Beimnet Tadesse
-                {/* Decorative underline */}
                 <div className="absolute -bottom-4 left-0 md:left-0 right-0 md:right-auto">
                   <div className="w-24 h-1 bg-gradient-brown rounded-full mx-auto md:mx-0" />
                   <div className="w-16 h-0.5 bg-gradient-card rounded-full mx-auto md:mx-0 mt-1" />
                 </div>
               </h1>
             </div>
-
-            {/* Enhanced tagline */}
             <div
               className="animate-slide-up"
               style={{ animationDelay: "0.2s" }}
@@ -125,20 +114,16 @@ export function HeroSection() {
                 </span>
                 <Sparkles className="h-5 w-5 text-primary animate-pulse-glow" />
               </div>
-              <p className="text-xl md:text-2xl text-primary font-medium max-w-lg mx-auto mt-2  md:mx-0">
+              <p className="text-xl md:text-2xl text-primary font-medium max-w-lg mx-auto mt-2 md:mx-0">
                 Building Bridges Between Technology and Marketing
               </p>
             </div>
-
-            {/* Enhanced description */}
             <p
               className="text-base md:text-lg text-foreground/80 max-w-xl mx-auto md:mx-0 animate-slide-up leading-relaxed"
               style={{ animationDelay: "0.4s" }}
             >
-              Software Engineer • Marketing Professional • Full-Stack Developer
+              Software Engineer • Marketing Enthusiast • Full-Stack Developer
             </p>
-
-            {/* Enhanced social links */}
             <div
               className="flex justify-center md:justify-start gap-4 pt-4 animate-slide-up"
               style={{ animationDelay: "0.6s" }}
@@ -156,8 +141,6 @@ export function HeroSection() {
                 <Send className="h-5 w-5" />
               </IconButton>
             </div>
-
-            {/* Enhanced CTA button */}
             <div
               className="flex justify-center md:justify-start pt-6 animate-slide-up"
               style={{ animationDelay: "0.8s" }}
@@ -168,32 +151,24 @@ export function HeroSection() {
               </PrimaryButton>
             </div>
           </div>
-
-          {/* Right Side: Enhanced Image */}
           <div
-            className="hidden md:flex justify-end items-start animate-slide-up"
+            className="hidden md:flex justify-end items-start animate
+
+-slide-up"
             style={{ animationDelay: "1s" }}
           >
             <div className="relative group">
-              {/* Background decoration */}
               <div className="absolute -inset-6 bg-gradient-brown rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-700" />
               <div className="absolute -inset-4 bg-gradient-card rounded-full opacity-30" />
-              {/* Main image container */}
               <div className="relative w-[450px] h-[450px] rounded-full shadow-glow overflow-hidden">
-                {/* Soft brown shadow behind the image */}
                 <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
-
                 <img
                   src="/photo.png"
                   alt="Beimnet Tadesse"
                   className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                 />
-
-                {/* Shimmer overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
-
-              {/* Floating accent elements */}
               <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full animate-pulse-glow" />
               <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-secondary/10 rounded-full animate-float" />
               <div
@@ -204,8 +179,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      {/* Enhanced Scroll Indicator */}
       <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-slide-up"
         style={{ animationDelay: "1.2s" }}
