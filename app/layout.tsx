@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Beimnet Tadesse - Software Engineer & Marketing Professional",
   description:
-    "Portfolio of Beimnet Tadesse - Software Engineering student and Marketing professional specializing in full-stack development and digital marketing.",
+    "Portfolio of Beimnet Tadesse - Software Engineering student and Marketing professional.",
 }
 
 export default function RootLayout({

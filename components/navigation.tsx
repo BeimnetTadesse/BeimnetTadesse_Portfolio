@@ -100,7 +100,7 @@ export function Navigation() {
             <div className="absolute -inset-2 bg-gradient-brown rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             <div className="relative font-serif text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-brown tracking-wide flex items-center gap-2">
               <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
-              Beimnet Tadesse
+              N I N A
             </div>
           </div>
 
