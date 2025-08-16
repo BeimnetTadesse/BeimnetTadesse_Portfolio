@@ -152,7 +152,7 @@ export function HeroSection() {
               <IconButton href="https://www.instagram.com/__.aloha__/">
                 <Instagram className="h-5 w-5" />
               </IconButton>
-              <IconButton href="https://t.me/byfaithhhh">
+              <IconButton href="https://t.me/byfaithhh">
                 <Send className="h-5 w-5" />
               </IconButton>
             </div>

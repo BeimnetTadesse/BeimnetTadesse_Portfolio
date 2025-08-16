@@ -51,7 +51,7 @@ export function ContactSection() {
     { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "https://github.com/BeimnetTadesse" },
     { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/beimnet-ashenafi-2339b8287/" },
     { icon: <Instagram className="h-5 w-5" />, label: "Instagram", href: "https://www.instagram.com/__.aloha__/" },
-    { icon: <Send className="h-5 w-5" />, label: "Telegram", href: "https://t.me/byfaithhhh" },
+    { icon: <Send className="h-5 w-5" />, label: "Telegram", href: "https://t.me/byfaithhh" },
   ];
 
   return (
