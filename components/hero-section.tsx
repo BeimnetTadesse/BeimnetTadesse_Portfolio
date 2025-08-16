@@ -55,7 +55,7 @@ export function HeroSection() {
   );
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24">
+<section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating orbs */}
