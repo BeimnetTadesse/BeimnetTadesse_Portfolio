@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   ArrowDown,
   Github,
@@ -165,11 +166,13 @@ export function HeroSection() {
     <div className="absolute -inset-4 bg-gradient-card rounded-full opacity-30" />
     <div className="relative w-full h-full rounded-full shadow-glow overflow-hidden">
       <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
-      <img
-        src="/newphoto2.png"
-        alt="Beimnet Tadesse"
-        className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-      />
+      <Image
+  src="/newphoto2.png"
+  alt="Beimnet Tadesse"
+  fill
+  priority // makes it load faster above the fold
+  className="relative rounded-full object-cover transition-transform duration-700 group-hover:scale-110"
+/>
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
     </div>
     <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full animate-pulse-glow" />
