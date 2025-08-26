@@ -44,12 +44,16 @@ export function HeroSection() {
   }) => (
     <button
       onClick={onClick}
-      className="group relative flex items-center px-8 py-3 rounded-full bg-gradient-brown text-primary-foreground font-semibold tracking-wide shadow-warm hover:shadow-glow transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
+      className="group relative flex items-center px-8 py-3 rounded-full 
+        bg-gradient-brown text-white font-semibold tracking-wide 
+        shadow-warm hover:shadow-glow 
+        transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       <div className="relative z-10 flex items-center">{children}</div>
     </button>
   );
+  
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0">
@@ -151,32 +155,34 @@ export function HeroSection() {
               </PrimaryButton>
             </div>
           </div>
+          
           <div
-            className="hidden md:flex justify-end items-start animate
+  className="flex justify-center md:justify-end items-center animate-slide-up"
+  style={{ animationDelay: "1s" }}
+>
+  <div className="relative group w-72 sm:w-80 md:w-[450px] h-72 sm:h-80 md:h-[450px]">
+    <div className="absolute -inset-6 bg-gradient-brown rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-700" />
+    <div className="absolute -inset-4 bg-gradient-card rounded-full opacity-30" />
+    <div className="relative w-full h-full rounded-full shadow-glow overflow-hidden">
+      <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
+      <img
+        src="/newphoto.png"
+        alt="Beimnet Tadesse"
+        className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+    </div>
+    <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full animate-pulse-glow" />
+    <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-secondary/10 rounded-full animate-float" />
+    <div
+      className="absolute top-1/4 -left-12 w-8 h-8 bg-accent/15 rounded-full animate-pulse-glow"
+      style={{ animationDelay: "1s" }}
+    />
+  </div>
+</div>
 
--slide-up"
-            style={{ animationDelay: "1s" }}
-          >
-            <div className="relative group">
-              <div className="absolute -inset-6 bg-gradient-brown rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-700" />
-              <div className="absolute -inset-4 bg-gradient-card rounded-full opacity-30" />
-              <div className="relative w-[450px] h-[450px] rounded-full shadow-glow overflow-hidden">
-                <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
-                <img
-                  src="/photo.png"
-                  alt="Beimnet Tadesse"
-                  className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </div>
-              <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full animate-pulse-glow" />
-              <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-secondary/10 rounded-full animate-float" />
-              <div
-                className="absolute top-1/4 -left-12 w-8 h-8 bg-accent/15 rounded-full animate-pulse-glow"
-                style={{ animationDelay: "1s" }}
-              />
-            </div>
-          </div>
+
+
         </div>
       </div>
       <div

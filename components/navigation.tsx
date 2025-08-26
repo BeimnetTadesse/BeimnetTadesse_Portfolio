@@ -59,24 +59,15 @@ export function Navigation() {
       className={`group relative px-4 py-2 transition-all duration-500 font-medium whitespace-nowrap rounded-full overflow-hidden
         ${
           active
-            ? "bg-gradient-brown text-primary-foreground font-bold shadow-glow scale-105"
+            ? "bg-gradient-brown text-white font-bold scale-105" // ✅ white text on brown bg
             : "text-foreground hover:bg-gradient-card hover:text-primary transform hover:-translate-y-1 hover:shadow-warm hover:scale-105"
         } 
         ${className}`}
     >
-      {/* Shimmer effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-
       <span className="relative z-10">{label}</span>
-
-      {active && (
-        <>
-          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-1 rounded-full bg-primary-foreground animate-pulse-glow" />
-          <div className="absolute -inset-1 bg-gradient-brown rounded-full blur opacity-30" />
-        </>
-      )}
     </button>
   );
+  
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-card">

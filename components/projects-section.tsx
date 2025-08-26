@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ExternalLink, Github, Sparkles, Star, Rocket, Zap, Target } from "lucide-react"
 
@@ -38,9 +38,10 @@ export function ProjectsSection() {
       className={`group relative flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-500 overflow-hidden ${
         outline
           ? "border border-primary text-primary bg-transparent hover:bg-gradient-brown hover:text-primary-foreground hover:scale-105"
-          : "bg-gradient-brown text-primary-foreground hover:shadow-glow hover:scale-105"
+          : "bg-gradient-brown text-white hover:shadow-glow hover:scale-105"
       }`}
     >
+      {/* Shimmer effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </a>

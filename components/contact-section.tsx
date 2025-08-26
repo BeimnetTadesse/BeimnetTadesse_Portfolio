@@ -87,7 +87,7 @@ export function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="group relative bg-gradient-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-primary/10 overflow-hidden">
+          <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
             <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               {["name", "email"].map((field) => (
@@ -102,7 +102,7 @@ export function ContactSection() {
                     onChange={handleChange}
                     placeholder={field === "email" ? "your.email@example.com" : "Your name"}
                     required
-                    className="w-full rounded-lg p-3 bg-muted/50 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                    className="w-full rounded-lg p-3 bg-white/20 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                   />
                 </div>
               ))}
@@ -115,7 +115,7 @@ export function ContactSection() {
                   placeholder="Your message..."
                   rows={5}
                   required
-                  className="w-full rounded-lg p-3 bg-muted/50 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                  className="w-full rounded-lg p-3 bg-white/20 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                 />
               </div>
               <button
@@ -127,16 +127,11 @@ export function ContactSection() {
               {status === "success" && <p className="text-green-500 mt-2">Message sent successfully!</p>}
               {status === "error" && <p className="text-red-500 mt-2">Failed to send message. Try again.</p>}
             </form>
-
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent animate-shimmer"></div>
-            </div>
           </div>
 
           {/* Contact Info & Socials */}
           <div className="space-y-6">
-            <div className="group relative bg-gradient-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-primary/10 overflow-hidden">
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
               <h3 className="text-2xl font-semibold mb-6 text-primary">Contact Information</h3>
               {contactInfo.map((info, i) => (
                 <div
@@ -156,7 +151,7 @@ export function ContactSection() {
               ))}
             </div>
 
-            <div className="group relative bg-gradient-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-primary/10 overflow-hidden">
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
               <h3 className="text-2xl font-semibold mb-6 text-primary">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, i) => (
@@ -165,9 +160,8 @@ export function ContactSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border relative overflow-hidden text-foreground transition-all duration-300 transform hover:-translate-y-1"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-gradient-brown text-white border border-border/30 relative overflow-hidden transition-all duration-300 transform hover:-translate-y-1"
                   >
-                    <span className="absolute inset-0 bg-gradient-brown opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                     <span className="relative flex items-center gap-3 z-10">
                       {social.icon} <span>{social.label}</span>
                     </span>
