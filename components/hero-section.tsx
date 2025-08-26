@@ -166,7 +166,7 @@ export function HeroSection() {
     <div className="relative w-full h-full rounded-full shadow-glow overflow-hidden">
       <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
       <img
-        src="/newphoto.png"
+        src="/newphoto2.png"
         alt="Beimnet Tadesse"
         className="relative w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
       />
