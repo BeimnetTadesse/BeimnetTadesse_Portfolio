@@ -136,7 +136,7 @@ export function HeroSection() {
               <IconButton href="https://github.com/BeimnetTadesse">
                 <Github className="h-5 w-5" />
               </IconButton>
-              <IconButton href="https://www.linkedin.com/in/beimnet-ashenafi-2339b8287/">
+              <IconButton href="https://www.linkedin.com/in/beimnet-tadesse-2339b8287/">
                 <Linkedin className="h-5 w-5" />
               </IconButton>
               <IconButton href="https://www.instagram.com/__.aloha__/">
