@@ -6,27 +6,51 @@ export function ProjectsSection() {
   const projects = [
     {
       title: "Mekrez",
-      description: "A modern school webiste for Mekrez Academy built with Next.js and Tailwind CSS",
+      description: "A modern school website for Mekrez Academy front end built with Next.js and Tailwind CSS",
       image: "/mekrez2.png",
       liveUrl: "https://mekrez.vercel.app/",
       githubUrl: "https://github.com/BeimnetTadesse/Mekrez",
       featured: false
     },
     {
-      title: "Adey Crochet",
-      description: "A crochet project website built with React and Tailwind",
-      image: "/adey2.png",
-      liveUrl: "https://adey-crochet.vercel.app",
-      githubUrl: "https://github.com/BeimnetTadesse/Adey_Crochet",
-      featured: true
+      title: "Finance Tracker",
+      description: "A comprehensive Finance Tracker with a Django backend and Next.js frontend",
+      image: "/finance-tracker.png",
+      liveUrl: "https://finance-tracker-frontend-rho.vercel.app",
+      githubUrl: "https://github.com/BeimnetTadesse/Finance-Tracker-API",
+      featured: false
     },
     {
       title: "Kaptan",
-      description: "A modern marketing agency website built with React and Tailwind",
+      description: "A modern marketing agency frontend built with React and Tailwind",
       image: "/kaptan2.png",
       liveUrl: "https://kaptan.vercel.app/",
       githubUrl: "https://github.com/BeimnetTadesse/Kaptan",
       featured: false
+    },
+    {
+      title: "Local Help Hub",
+      description: "A community platform built with a Node.js backend and Next.js frontend",
+      image: "/local-help-hub.png",
+      liveUrl: "https://local-help-hub-frontend.vercel.app",
+      githubUrl: "https://github.com/BeimnetTadesse/local-help-hub-frontend",
+      featured: false
+    },
+    {
+      title: "Protectly",
+      description: "A Flutter mobile application with a Django backend and MySQL database",
+      image: "/protectly.png",
+      liveUrl: "",
+      githubUrl: "https://github.com/BeimnetTadesse/protectly-frontend",
+      featured: false
+    },
+    {
+      title: "Adey Crochet",
+      description: "A frontend crochet project website built with React and Tailwind",
+      image: "/adey2.png",
+      liveUrl: "https://adey-crochet.vercel.app",
+      githubUrl: "https://github.com/BeimnetTadesse/Adey_Crochet",
+      featured: true
     },
   ]
 

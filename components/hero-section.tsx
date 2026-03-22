@@ -3,6 +3,7 @@
 import Image from "next/image";
 import {
   ArrowDown,
+  Download,
   Github,
   Linkedin,
   Instagram,
@@ -112,15 +113,8 @@ export function HeroSection() {
               className="animate-slide-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="inline-flex items-center gap-2 mb-2">
-                <Sparkles className="h-5 w-5 text-primary animate-pulse-glow" />
-                <span className="text-sm font-medium text-primary uppercase tracking-wide">
-                  Innovating The Future
-                </span>
-                <Sparkles className="h-5 w-5 text-primary animate-pulse-glow" />
-              </div>
-              <p className="text-xl md:text-2xl text-primary font-medium max-w-lg mx-auto mt-2 md:mx-0">
-                Building Bridges Between Technology and Marketing
+              <p className="text-base md:text-lg text-foreground/80 max-w-xl mx-auto mt-2 md:mx-0 leading-relaxed">
+                Developing responsive and scalable web applications that address real-world needs using modern technologies.
               </p>
             </div>
             <p
@@ -147,13 +141,21 @@ export function HeroSection() {
               </IconButton>
             </div>
             <div
-              className="flex justify-center md:justify-start pt-6 animate-slide-up"
+              className="flex justify-center md:justify-start gap-4 pt-6 animate-slide-up"
               style={{ animationDelay: "0.8s" }}
             >
               <PrimaryButton onClick={scrollToAbout}>
                 Explore My Work
                 <ArrowDown className="ml-2 h-4 w-4 animate-bounce" />
               </PrimaryButton>
+              <a
+                href="/Beimnet_Tadesse_CV.pdf"
+                download
+                className="group relative flex items-center gap-2 px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold tracking-wide hover:bg-primary hover:text-primary-foreground transition-all duration-500 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
+              >
+                Download CV
+                <Download className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
+              </a>
             </div>
           </div>
           

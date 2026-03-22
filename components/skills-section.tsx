@@ -1,77 +1,23 @@
 "use client"
 
-import { Code, Palette, TrendingUp, Sparkles, Zap, Target } from "lucide-react"
-import type React from "react"
+import { Sparkles, Zap, Target, Code } from "lucide-react"
 
 export function SkillsSection() {
-  const Progress = ({ value, className = "" }: { value: number; className?: string }) => {
-    const clamped = Math.max(0, Math.min(100, value))
-    return (
-      <div className="relative">
-        <div
-          className={`w-full bg-muted/40 rounded-full overflow-hidden ${className}`}
-          role="progressbar"
-          aria-valuenow={clamped}
-          aria-valuemin={0}
-          aria-valuemax={100}
-        >
-          <div
-            className="h-full bg-gradient-brown transition-[width] duration-1000 ease-out relative overflow-hidden"
-            style={{ width: `${clamped}%` }}
-          >
-            {/* Shimmer effect on progress bar */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer" />
-          </div>
-        </div>
-        {/* Glow effect */}
-        <div className="absolute inset-0 bg-gradient-brown rounded-full blur opacity-0 hover:opacity-20 transition-opacity duration-300" />
-      </div>
-    )
-  }
-
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: Code,
-      description: "Building modern, responsive user interfaces",
-      color: "primary",
-      gradient: "bg-gradient-brown",
-      skills: [
-        { name: "React", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "HTML/CSS/JS", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "TypeScript", level: 80 },
-      ],
-    },
-    {
-      title: "Backend Development",
-      icon: Palette,
-      description: "Server-side development and database management",
-      color: "accent",
-      gradient: "bg-gradient-card",
-      skills: [
-        { name: "Node.js/ Express.js", level: 80 },
-        { name: "Django", level: 80 },
-        { name: "MySQL", level: 75 },
-        { name: "API Development", level: 80 },
-        { name: "PostgreSQL", level: 80 },
-      ],
-    },
-    {
-      title: "Marketing Basics",
-      icon: TrendingUp,
-      description: "Managing social media and advertising campaigns",
-      color: "accent",
-      gradient: "bg-gradient-brown",
-      skills: [
-        { name: "Social Media Management", level: 75 },
-        { name: "Ads Management", level: 80 },
-        { name: "Content Creation", level: 85 },
-        { name: "Community Engagement", level: 70 },
-        { name: "Basic Analytics", level: 75 },
-      ],
-    }
+  const devSkills = [
+    { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+    { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+    { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+    { name: "TypeScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+    { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" },
+    { name: "Express", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+    { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+    { name: "PHP", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+    { name: "MySQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+    { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+    { name: "Tailwind", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+    { name: "Git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+    { name: "GitHub", src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" }
   ]
 
   return (
@@ -113,80 +59,46 @@ export function SkillsSection() {
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-brown rounded-full" />
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Technical expertise & marketing knowledge
+            Technologies I work with regularly
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {skillCategories.map((category, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
+          {devSkills.map((skill, index) => (
             <div
               key={index}
-              className="group relative animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="group relative animate-slide-up flex flex-col items-center gap-4"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Background glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative bg-card/80 backdrop-blur-sm rounded-xl shadow-card hover:shadow-glow transition-all duration-500 group-hover:-translate-y-2 border border-border/20 overflow-hidden">
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-card backdrop-blur-md shadow-card hover:shadow-glow transition-all duration-300 group-hover:-translate-y-2 border border-border/20 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -inset-1 bg-gradient-brown opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300" />
                 
-                {/* Header */}
-                <div className="p-6 border-b border-border/20 relative">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="relative">
-                      <div className={`p-3 ${category.gradient} rounded-xl shadow-warm group-hover:animate-pulse-glow transition-all duration-300`}>
-                        <category.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
-                        {category.title}
-                        <Target className="h-4 w-4 text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </h3>
-                      <p className="text-sm text-foreground/60 group-hover:text-foreground/80 transition-colors duration-300">
-                        {category.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Skills list */}
-                <div className="p-6 space-y-4 relative">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2 group/skill">
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-300">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-foreground/60 font-medium">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <Progress value={skill.level} className="h-2" />
-                    </div>
-                  ))}
-                  
-                  {/* Floating accent elements */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/5 rounded-full animate-pulse-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-secondary/5 rounded-full animate-float opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                
-                {/* Bottom accent line */}
-                <div className="h-1 bg-gradient-brown transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* SVG Icon Logo */}
+                <img 
+                  src={skill.src} 
+                  alt={skill.name} 
+                  className="w-10 h-10 md:w-12 md:h-12 object-contain relative z-10 filter transition-transform duration-300 group-hover:scale-110" 
+                />
               </div>
+              <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>
 
-        {/* Bottom decorative element */}
-        <div className="flex justify-center mt-16 animate-slide-up" style={{ animationDelay: '1s' }}>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-px bg-gradient-brown" />
-            <Code className="h-6 w-6 text-primary animate-pulse-glow" />
-            <div className="w-12 h-px bg-gradient-brown" />
+        {/* Bottom decorative element & text */}
+        <div className="text-center animate-slide-up" style={{ animationDelay: '1.4s' }}>
+          <p className="text-sm md:text-base text-foreground/60 font-medium tracking-wide mb-8">
+            Always exploring new technologies
+          </p>
+          <div className="flex justify-center">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-px bg-gradient-brown" />
+              <Code className="h-5 w-5 text-primary/60 animate-pulse-glow" />
+              <div className="w-16 h-px bg-gradient-brown" />
+            </div>
           </div>
         </div>
       </div>

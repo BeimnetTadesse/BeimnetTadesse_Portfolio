@@ -10,9 +10,10 @@ export function Navigation() {
   const navItems = [
     { id: "home", label: "Home", href: "#home" },
     { id: "about", label: "About Me", href: "#about" },
-    { id: "education", label: "Education", href: "#education" },
     { id: "projects", label: "Projects", href: "#projects" },
     { id: "skills", label: "Skills", href: "#skills" },
+    { id: "services", label: "Services", href: "#services" },
+    { id: "education", label: "Education", href: "#education" },
     // { id: "experience", label: "Experience", href: "#experience" },
     { id: "contact", label: "Contact", href: "#contact" },
   ];

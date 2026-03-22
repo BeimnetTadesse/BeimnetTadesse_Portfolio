@@ -6,6 +6,7 @@ import { EducationSection } from "../components/education-section"
 import { SkillsSection } from "../components/skills-section"
 import { ProjectsSection } from "../components/projects-section"
 import { ContactSection } from "../components/contact-section"
+import { ServicesSection } from "../components/services-section"
 
 export default function Home() {
   return (
@@ -17,14 +18,17 @@ export default function Home() {
       <div id="about">
         <AboutSection />
       </div>
-      <div id="education">
-        <EducationSection />
-      </div>
       <div id="projects">
         <ProjectsSection />
       </div>
       <div id="skills">
         <SkillsSection />
+      </div>
+      <div id="services">
+        <ServicesSection />
+      </div>
+      <div id="education">
+        <EducationSection />
       </div>
       {/* <div id="experience">
         <ExperienceSection />
