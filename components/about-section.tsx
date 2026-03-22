@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Sparkles, BookOpen, Code, Users, Lightbulb, Zap, Target } from "lucide-react";

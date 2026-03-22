@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { ExternalLink, Github, Sparkles, Star, Rocket, Zap, Target } from "lucide-react"
+import { ExternalLink, Github, Sparkles, Rocket, Zap, Target } from "lucide-react"
 
 export function ProjectsSection() {
   const projects = [

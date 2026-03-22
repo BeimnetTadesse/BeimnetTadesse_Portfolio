@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { LayoutTemplate, Database, PenTool, Code, Smartphone, Settings, ArrowRight, Sparkles, CheckCircle } from "lucide-react";

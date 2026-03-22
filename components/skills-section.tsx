@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { Sparkles, Zap, Target, Code } from "lucide-react"
