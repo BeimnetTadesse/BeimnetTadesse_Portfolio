@@ -27,7 +27,7 @@ export function EducationSection() {
   return (
     <section className="py-20 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Creative Background Elements */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:hidden">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary animate-float"></div>
         <div className="absolute top-40 right-20 w-24 h-24 rounded-full bg-secondary animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/4 w-16 h-16 rounded-full bg-primary animate-float" style={{ animationDelay: '2s' }}></div>
@@ -35,7 +35,7 @@ export function EducationSection() {
       </div>
 
       {/* Geometric Patterns */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 dark:hidden">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">

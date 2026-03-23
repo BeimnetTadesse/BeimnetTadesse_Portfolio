@@ -62,7 +62,7 @@ export function ContactSection() {
       <div className="absolute bottom-0 left-1/4 w-56 h-56 bg-primary rounded-full opacity-10 animate-float" style={{ animationDelay: "2s" }}></div>
 
       {/* Geometric Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:hidden">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
