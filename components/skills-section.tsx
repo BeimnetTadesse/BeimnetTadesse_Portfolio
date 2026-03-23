@@ -22,7 +22,7 @@ export function SkillsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-warm relative overflow-hidden">
+    <section className="py-20 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full animate-float" />
@@ -55,9 +55,9 @@ export function SkillsSection() {
             <span className="text-sm font-medium text-primary uppercase tracking-wide">Technical Expertise</span>
             <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary relative">
-            Skills
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-brown rounded-full" />
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 relative">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">Skills</span>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-brown rounded-full" />
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             Technologies I work with regularly
@@ -71,16 +71,18 @@ export function SkillsSection() {
               className="group relative animate-slide-up flex flex-col items-center gap-4"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-card backdrop-blur-md shadow-card hover:shadow-glow transition-all duration-300 group-hover:-translate-y-2 border border-border/20 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute -inset-1 bg-gradient-brown opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300" />
-                
-                {/* SVG Icon Logo */}
-                <img 
-                  src={skill.src} 
-                  alt={skill.name} 
-                  className="w-10 h-10 md:w-12 md:h-12 object-contain relative z-10 filter transition-transform duration-300 group-hover:scale-110" 
-                />
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl dark:gradient-border group-hover:-translate-y-2 transition-transform duration-300">
+                <div className="h-full w-full rounded-2xl bg-card backdrop-blur-md shadow-card hover:shadow-glow flex items-center justify-center relative overflow-hidden transition-colors border border-border">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute -inset-1 bg-gradient-brown opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300" />
+                  
+                  {/* SVG Icon Logo */}
+                  <img 
+                    src={skill.src} 
+                    alt={skill.name} 
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain relative z-10 filter transition-transform duration-300 group-hover:scale-110" 
+                  />
+                </div>
               </div>
               <span className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300">
                 {skill.name}

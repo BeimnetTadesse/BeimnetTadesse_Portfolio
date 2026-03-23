@@ -81,7 +81,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-warm relative overflow-hidden">
+    <section className="py-24 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none mb-12">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full animate-float" />
@@ -107,8 +107,8 @@ export function ServicesSection() {
             <span className="text-sm font-medium text-primary uppercase tracking-wide">What I Offer</span>
             <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary relative">
-            Services
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 relative">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">Services</span>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-brown rounded-full" />
           </h2>
           <p className="text-foreground/70 leading-relaxed max-w-2xl mx-auto mt-6 text-[15px]">
@@ -121,52 +121,54 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-card/80 backdrop-blur-md rounded-3xl shadow-card cursor-pointer border border-border/20 p-8 flex flex-col h-full hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-slide-up overflow-hidden"
+              className="group relative dark:gradient-border rounded-3xl animate-slide-up"
               style={{ animationDelay: `${service.delay}s` }}
             >
-              {/* Background Glow Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute -inset-1 bg-gradient-brown opacity-0 group-hover:opacity-5 blur-xl transition-opacity duration-500" />
-              
-              {/* Icon Container */}
-              <div className="w-14 h-14 rounded-2xl bg-gradient-brown shadow-warm flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-500 relative z-10">
-                <service.icon className="w-7 h-7" />
-              </div>
-
-              {/* Title & Description */}
-              <div className="relative z-10 flex-grow">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed mb-8 text-[15px]">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Technologies Section */}
-              <div className="relative z-10 mb-8">
-                <h4 className="text-xs font-bold text-foreground/50 uppercase tracking-widest mb-4">
-                  Technologies
-                </h4>
-                <div className="flex flex-wrap gap-2.5">
-                  {service.technologies.map((tech, techIdx) => (
-                    <div
-                      key={techIdx}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 border border-border/30 shadow-sm hover:border-primary/40 transition-colors duration-300"
-                    >
-                      {tech.img && <img src={tech.img} alt={tech.name} className="w-4 h-4 object-contain filter drop-shadow-sm" />}
-                      {!tech.img && <CheckCircle className="w-4 h-4 text-primary/60" />}
-                      <span className="text-xs font-semibold text-foreground/80 tracking-wide">{tech.name}</span>
-                    </div>
-                  ))}
+              <div className="relative bg-card/40 backdrop-blur-md rounded-3xl shadow-card cursor-pointer border border-border p-8 flex flex-col h-full hover:shadow-glow transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                {/* Background Glow Hover Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute -inset-1 bg-gradient-brown opacity-0 group-hover:opacity-5 blur-xl transition-opacity duration-500" />
+                
+                {/* Icon Container */}
+                <div className="w-14 h-14 rounded-2xl bg-gradient-brown shadow-warm flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-500 relative z-10">
+                  <service.icon className="w-7 h-7" />
                 </div>
-              </div>
 
-              {/* Learn More Link at the bottom right */}
-              <div className="relative z-10 flex justify-end mt-auto pt-4 border-t border-border/10">
-                <div className="flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors">
-                  <span className="text-sm font-semibold tracking-wide">Learn more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Title & Description */}
+                <div className="relative z-10 flex-grow">
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed mb-8 text-[15px]">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Technologies Section */}
+                <div className="relative z-10 mb-8">
+                  <h4 className="text-xs font-bold text-foreground/50 uppercase tracking-widest mb-4">
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-2.5">
+                    {service.technologies.map((tech, techIdx) => (
+                      <div
+                        key={techIdx}
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/50 border border-border/30 shadow-sm hover:border-primary/40 transition-colors duration-300"
+                      >
+                        {tech.img && <img src={tech.img} alt={tech.name} className="w-4 h-4 object-contain filter drop-shadow-sm" />}
+                        {!tech.img && <CheckCircle className="w-4 h-4 text-primary/60" />}
+                        <span className="text-xs font-semibold text-foreground/80 tracking-wide">{tech.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Learn More Link at the bottom right */}
+                <div className="relative z-10 flex justify-end mt-auto pt-4 border-t border-border/10">
+                  <div className="flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors">
+                    <span className="text-sm font-semibold tracking-wide">Learn more</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             </div>

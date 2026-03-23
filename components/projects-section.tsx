@@ -73,7 +73,7 @@ export function ProjectsSection() {
   )
 
   return (
-    <section className="py-20 bg-gradient-warm relative overflow-hidden">
+    <section className="py-20 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full animate-float" />
@@ -85,7 +85,7 @@ export function ProjectsSection() {
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 h-full">
             {Array.from({ length: 144 }).map((_, i) => (
-              <div key={i} className="border border-primary/20" />
+              <div key={i} className="border border-primary/10" />
             ))}
           </div>
         </div>
@@ -106,8 +106,8 @@ export function ProjectsSection() {
             <span className="text-sm font-medium text-primary uppercase tracking-wide">Featured Work</span>
             <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary relative">
-            Projects
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 relative">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">Projects</span>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-brown rounded-full" />
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
@@ -122,45 +122,45 @@ export function ProjectsSection() {
               className={`group relative animate-slide-up`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative bg-card/80 backdrop-blur-sm rounded-xl shadow-card hover:shadow-glow transition-all duration-500 border border-border/20 overflow-hidden group-hover:-translate-y-2">
-                
-                {/* Image */}
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-6 space-y-4 relative">
-                  <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
-                    {project.title}
-                    <Rocket className="h-4 w-4 text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </h3>
-                  <p className="text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                    {project.description}
-                  </p>
-
-                  {/* Buttons */}
-                  <div className="flex gap-3 pt-2">
-                    {project.liveUrl && (
-                      <Button href={project.liveUrl}>
-                        <ExternalLink className="h-4 w-4" /> Live Demo
-                      </Button>
-                    )}
-                    {project.githubUrl && (
-                      <Button href={project.githubUrl} outline>
-                        <Github className="h-4 w-4" /> Code
-                      </Button>
-                    )}
+              <div className="relative group dark:gradient-border rounded-xl">
+                <div className="relative bg-card/40 backdrop-blur-sm rounded-xl shadow-card hover:shadow-glow transition-all duration-500 border border-border overflow-hidden group-hover:-translate-y-2">
+                  
+                  {/* Image */}
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                    />
                   </div>
-                </div>
 
-                {/* Bottom accent line */}
-                <div className="h-1 bg-gradient-brown transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                  <div className="p-6 space-y-4 relative">
+                    <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                      {project.title}
+                      <Rocket className="h-4 w-4 text-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </h3>
+                    <p className="text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                      {project.description}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="flex gap-3 pt-2">
+                      {project.liveUrl && (
+                        <Button href={project.liveUrl}>
+                          <ExternalLink className="h-4 w-4" /> Live Demo
+                        </Button>
+                      )}
+                      {project.githubUrl && (
+                        <Button href={project.githubUrl} outline>
+                          <Github className="h-4 w-4" /> Code
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className="h-1 bg-gradient-brown transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </div>
               </div>
             </div>
           ))}

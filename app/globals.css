@@ -3,26 +3,90 @@
 /* 1️⃣ Include Tailwind layers first */
 @tailwind utilities;
 
-/* 2️⃣ Then add your custom CSS and variables */
+/* 2️⃣ Light theme (warm brown) */
 @layer base {
   :root {
     --background: 40 50% 96%;
     --foreground: 25 45% 18%;
     --primary: 25 35% 28%;
     --secondary: 30 25% 52%;
+    --card: 40 40% 93%;
+    --border: 30 15% 55%; /* Darker brown for better visibility */
     --gradient-warm: linear-gradient(135deg, hsl(40 50% 96%), hsl(40 40% 94%), hsl(35 40% 85%));
     --gradient-brown: linear-gradient(135deg, hsl(25 35% 28%), hsl(30 25% 52%));
+    --gradient-card: linear-gradient(135deg, hsl(40 40% 92%), hsl(35 35% 88%));
+  }
+
+  /* 3️⃣ Dark theme — vibrant Cyan-to-Purple gradient as per reference */
+  .dark {
+    --background: 232 40% 5%;    /* Deepest navy/black */
+    --foreground: 210 20% 92%;
+    --primary: 188 100% 50%;    /* Bright Cyan (match image) */
+    --secondary: 265 85% 75%;   /* Soft Purple/Violet (match image) */
+    --card: 230 35% 8%;
+    --border: 230 30% 25%;      /* Increased border visibility for dark mode contrast */
+    --gradient-warm: linear-gradient(160deg, hsl(232 40% 5%), hsl(235 35% 7%));
+    
+    /* This gradient will be used for text and primary buttons */
+    --gradient-brown: linear-gradient(to right, #00e5ff, #448aff, #b388ff);
+    --gradient-card: linear-gradient(160deg, hsl(230 35% 10%), hsl(232 30% 12%));
   }
 
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    transition: background-color 0.4s ease, color 0.3s ease;
   }
 
-  .bg-primary { background-color: hsl(var(--primary)); }
-  .bg-secondary { background-color: hsl(var(--secondary)); }
-  .bg-gradient-warm { background: var(--gradient-warm); }
-  .bg-gradient-brown { background: var(--gradient-brown); }
-  .text-primary { color: hsl(var(--primary)); }
-  .text-secondary { color: hsl(var(--secondary)); }
+  /* Custom utility overrides */
+  .bg-primary          { background-color: hsl(var(--primary)); }
+  .bg-secondary        { background-color: hsl(var(--secondary)); }
+  .bg-card             { background-color: hsl(var(--card)); }
+  .bg-background       { background-color: hsl(var(--background)); }
+  .bg-gradient-warm    { background: var(--gradient-warm); }
+  .bg-gradient-brown   { background: var(--gradient-brown); }
+  .bg-gradient-card    { background: var(--gradient-card); }
+
+  .text-primary        { color: hsl(var(--primary)); }
+  .text-secondary      { color: hsl(var(--secondary)); }
+  .text-foreground     { color: hsl(var(--foreground)); }
+
+  .border-border       { border-color: hsl(var(--border)) !important; }
+
+  /* Gradient Text Utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-brown);
+  }
+
+  /* Gradient Border Utility (Dark Mode Only) */
+  .dark .gradient-border {
+    @apply relative p-[1px] overflow-hidden;
+    background: var(--gradient-brown);
+  }
+  .dark .gradient-border > div,
+  .dark .gradient-border > a {
+    @apply h-full w-full;
+  }
+
+  /* Dark mode glow adjustments */
+  .dark .shadow-glow {
+    box-shadow: 0 0 25px hsl(188 100% 50% / 0.15);
+  }
+  
+  .dark .shadow-card {
+    box-shadow: 0 8px 32px hsl(232 40% 2% / 0.8);
+  }
+
+  /* Dark mode radial background glow (Cyan/Purple vibe) */
+  .dark body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, hsl(188 100% 40% / 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 80%, hsl(265 85% 50% / 0.08) 0%, transparent 70%);
+    z-index: 0;
+  }
 }

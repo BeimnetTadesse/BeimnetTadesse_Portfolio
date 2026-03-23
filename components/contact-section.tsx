@@ -55,7 +55,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-warm relative overflow-hidden">
+    <section className="py-24 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Decorative Floating Shapes */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary rounded-full opacity-10 animate-float"></div>
       <div className="absolute top-1/3 right-0 w-64 h-64 bg-secondary rounded-full opacity-10 animate-float" style={{ animationDelay: "1s" }}></div>
@@ -76,8 +76,8 @@ export function ContactSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4 relative">
-            Contact Me
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 relative text-center">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">Contact Me</span>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-brown rounded-full"></div>
           </h2>
           <p className="text-foreground text-xl max-w-2xl mx-auto">
@@ -87,7 +87,8 @@ export function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
+          <div className="relative group dark:gradient-border rounded-2xl">
+            <div className="relative h-full bg-card/40 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-border overflow-hidden hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
             <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               {["name", "email"].map((field) => (
@@ -95,28 +96,32 @@ export function ContactSection() {
                   <label className="block text-sm font-medium mb-2 text-foreground">
                     {field.charAt(0).toUpperCase() + field.slice(1)}
                   </label>
-                  <input
-                    name={field}
-                    type={field === "email" ? "email" : "text"}
-                    value={formData[field as keyof typeof formData]}
-                    onChange={handleChange}
-                    placeholder={field === "email" ? "your.email@example.com" : "Your name"}
-                    required
-                    className="w-full rounded-lg p-3 bg-white/20 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
-                  />
+                    <div className="relative group dark:gradient-border rounded-lg">
+                      <input
+                        name={field}
+                        type={field === "email" ? "email" : "text"}
+                        value={formData[field as keyof typeof formData]}
+                        onChange={handleChange}
+                        placeholder={field === "email" ? "your.email@example.com" : "Your name"}
+                        required
+                        className="w-full rounded-lg p-3 bg-card/50 text-foreground border border-border dark:border-primary/30 focus:ring-0 focus:outline-none transition-all"
+                      />
+                    </div>
                 </div>
               ))}
               <div>
                 <label className="block text-sm font-medium mb-2 text-foreground">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Your message..."
-                  rows={5}
-                  required
-                  className="w-full rounded-lg p-3 bg-white/20 text-foreground border border-border focus:ring-2 focus:ring-primary focus:outline-none transition-all"
-                />
+                <div className="relative group dark:gradient-border rounded-lg">
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your message..."
+                    rows={5}
+                    required
+                    className="w-full rounded-lg p-3 bg-card/50 text-foreground border border-border dark:border-primary/30 focus:ring-0 focus:outline-none transition-all"
+                  />
+                </div>
               </div>
               <button
                 type="submit"
@@ -128,10 +133,12 @@ export function ContactSection() {
               {status === "error" && <p className="text-red-500 mt-2">Failed to send message. Try again.</p>}
             </form>
           </div>
+          </div>
 
           {/* Contact Info & Socials */}
           <div className="space-y-6">
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
+            <div className="relative group dark:gradient-border rounded-2xl">
+              <div className="relative h-full bg-card/40 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-border overflow-hidden hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
               <h3 className="text-2xl font-semibold mb-6 text-primary">Contact Information</h3>
               {contactInfo.map((info, i) => (
                 <div
@@ -150,8 +157,10 @@ export function ContactSection() {
                 </div>
               ))}
             </div>
+            </div>
 
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-primary/10 overflow-hidden group hover:shadow-glow transition-all duration-500 hover:-translate-y-2" style={{ boxShadow: "0 10px 15px -3px rgba(139, 69, 19, 0.1), 0 4px 6px -2px rgba(139, 69, 19, 0.05)" }}>
+            <div className="relative group dark:gradient-border rounded-2xl">
+              <div className="relative h-full bg-card/40 backdrop-blur-sm rounded-2xl p-8 shadow-card border border-border overflow-hidden hover:shadow-glow transition-all duration-500 hover:-translate-y-2">
               <h3 className="text-2xl font-semibold mb-6 text-primary">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, i) => (
@@ -168,6 +177,7 @@ export function ContactSection() {
                   </a>
                 ))}
               </div>
+            </div>
             </div>
           </div>
         </div>

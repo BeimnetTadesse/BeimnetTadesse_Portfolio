@@ -25,7 +25,7 @@ export function EducationSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-warm relative overflow-hidden">
+    <section className="py-20 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Creative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-primary animate-float"></div>
@@ -61,8 +61,8 @@ export function EducationSection() {
             </div>
           </div>
           
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-primary relative">
-            Education
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 relative">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">Education</span>
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-brown rounded-full"></div>
           </h2>
           <p className="text-xl text-foreground max-w-2xl mx-auto">
@@ -86,61 +86,63 @@ export function EducationSection() {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-brown rounded-full border-4 border-background shadow-glow" 
                      style={{ top: `${20 + index * 40}%` }}></div>
                 
-                <div className="group relative bg-gradient-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-primary/10 overflow-hidden">
-                  {/* Shimmer Effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-shimmer"></div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className={`w-3 h-3 rounded-full ${edu.icon === 'tech' ? 'bg-primary' : 'bg-secondary'} animate-pulse`}></div>
-                          <h3 className="font-serif text-xl font-bold text-foreground">{edu.degree}</h3>
-                        </div>
-                        <p className="text-lg font-semibold text-primary mb-4">{edu.institution}</p>
-                      </div>
-                      
-                      {/* Floating Icon */}
-                      <div className="w-12 h-12 bg-gradient-brown rounded-full flex items-center justify-center animate-float shadow-warm">
-                        {edu.icon === 'tech' ? (
-                          <svg className="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        ) : (
-                          <svg className="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                          </svg>
-                        )}
-                      </div>
+                <div className="group relative dark:gradient-border rounded-2xl">
+                  <div className="relative bg-card/40 backdrop-blur-sm rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 border border-border overflow-hidden h-full">
+                    {/* Shimmer Effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-shimmer"></div>
                     </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-3 mb-4">
-                      <span className="flex items-center gap-2 px-3 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-foreground font-medium backdrop-blur-sm">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        {edu.duration}
-                      </span>
-                      <span className="flex items-center gap-2 px-3 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-foreground font-medium backdrop-blur-sm">
-                        <MapPin className="h-4 w-4 text-primary" />
-                        {edu.location}
-                      </span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-foreground leading-relaxed mb-4">{edu.description}</p>
                     
-                    {/* Progress Indicator */}
-                    <div className="w-full bg-primary/10 rounded-full h-2 mb-2">
-                      <div className="bg-gradient-brown h-2 rounded-full w-3/4 transition-all duration-1000 group-hover:w-full"></div>
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className={`w-3 h-3 rounded-full ${edu.icon === 'tech' ? 'bg-primary' : 'bg-secondary'} animate-pulse`}></div>
+                            <h3 className="font-serif text-xl font-bold text-foreground">{edu.degree}</h3>
+                          </div>
+                          <p className="text-lg font-semibold text-primary mb-4">{edu.institution}</p>
+                        </div>
+                        
+                        {/* Floating Icon */}
+                        <div className="w-12 h-12 bg-gradient-brown rounded-full flex items-center justify-center animate-float shadow-warm">
+                          {edu.icon === 'tech' ? (
+                            <svg className="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          ) : (
+                            <svg className="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-3 mb-4">
+                        <span className="flex items-center gap-2 px-3 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-foreground font-medium backdrop-blur-sm">
+                          <Calendar className="h-4 w-4 text-primary" />
+                          {edu.duration}
+                        </span>
+                        <span className="flex items-center gap-2 px-3 py-2 text-sm bg-primary/10 border border-primary/20 rounded-lg text-foreground font-medium backdrop-blur-sm">
+                          <MapPin className="h-4 w-4 text-primary" />
+                          {edu.location}
+                        </span>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-foreground leading-relaxed mb-4">{edu.description}</p>
+                      
+                      {/* Progress Indicator */}
+                      <div className="w-full bg-primary/10 rounded-full h-2 mb-2">
+                        <div className="bg-gradient-brown h-2 rounded-full w-3/4 transition-all duration-1000 group-hover:w-full"></div>
+                      </div>
+                      <p className="text-xs text-muted-foreground">In Progress</p>
                     </div>
-                    <p className="text-xs text-muted-foreground">In Progress</p>
+                    
+                    {/* Decorative Corner */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-brown opacity-10 rounded-bl-full"></div>
                   </div>
-                  
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-brown opacity-10 rounded-bl-full"></div>
                 </div>
               </div>
             ))}

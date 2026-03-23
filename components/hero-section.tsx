@@ -25,16 +25,17 @@ export function HeroSection() {
     href: string;
     children: React.ReactNode;
   }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative p-3 rounded-full bg-card/80 backdrop-blur-sm text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-500 shadow-card hover:shadow-glow transform hover:scale-110 border border-border/30 overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-      <div className="relative z-10">{children}</div>
-      <div className="absolute -inset-2 bg-gradient-brown rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-    </a>
+    <div className="group rounded-full dark:gradient-border">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block p-3 rounded-full border border-border dark:border-transparent bg-card/40 text-foreground hover:text-primary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-glow"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+        <div className="relative z-10">{children}</div>
+      </a>
+    </div>
   );
 
   const PrimaryButton = ({
@@ -58,7 +59,7 @@ export function HeroSection() {
   
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-warm relative overflow-hidden pt-24 pb-32 md:pb-0 transition-colors duration-500">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full animate-float blur-xl" />
         <div
@@ -99,16 +100,13 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 z-10">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] items-center gap-12 lg:gap-24">
-          <div className="text-center md:text-left space-y-6">
-            <div className="relative animate-slide-up">
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight relative">
+          <div className="text-center md:text-left space-y-8 max-w-2xl animate-slide-up relative z-10">
+            <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight tracking-tight mt-12 relative pb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-brown inline-block">
                 Beimnet Tadesse
-                <div className="absolute -bottom-4 left-0 md:left-0 right-0 md:right-auto">
-                  <div className="w-24 h-1 bg-gradient-brown rounded-full mx-auto md:mx-0" />
-                  <div className="w-16 h-0.5 bg-gradient-card rounded-full mx-auto md:mx-0 mt-1" />
-                </div>
-              </h1>
-            </div>
+              </span>
+              <div className="absolute bottom-0 left-0 w-24 h-1.5 bg-gradient-brown rounded-full" />
+            </h1>
             <div
               className="animate-slide-up"
               style={{ animationDelay: "0.2s" }}
@@ -167,7 +165,7 @@ export function HeroSection() {
     <div className="absolute -inset-6 bg-gradient-brown rounded-full blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-700" />
     <div className="absolute -inset-4 bg-gradient-card rounded-full opacity-30" />
     <div className="relative w-full h-full rounded-full shadow-glow overflow-hidden">
-      <div className="absolute inset-0 rounded-full bg-brown/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
+      <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-1" />
       <Image
   src="/newphoto2.png"
   alt="Beimnet Tadesse"

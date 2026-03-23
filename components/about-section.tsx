@@ -1,11 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Sparkles, BookOpen, Code, Users, Lightbulb, Zap, Target } from "lucide-react";
+import { About3DScene } from "./about-3d-scene";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-gradient-warm relative overflow-hidden">
+    <section id="about" className="py-24 bg-gradient-warm relative overflow-hidden transition-colors duration-500">
       {/* Floating Background Elements mimicking Skills section */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full animate-float" />
@@ -46,60 +46,66 @@ export function AboutSection() {
             </div>
           </div>
 
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary relative mb-6">
-            About Me
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-brown">About Me</span>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-brown rounded-full" />
           </h2>
-          <div className="w-20 h-1 bg-gradient-brown rounded-full mx-auto shadow-sm" />
         </div>
 
         {/* Content Split: Image Left, Text Right */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-6xl mx-auto w-full">
           
-          {/* Left Column: Image Area */}
+          {/* Left Column: 3D Interactive Scene */}
           <div className="w-full sm:w-2/3 lg:w-1/3 mx-auto animate-slide-up relative group">
-            {/* Image Box */}
-            <div className="relative bg-card rounded-[2rem] p-2 shadow-card border border-border/20 z-10 overflow-hidden transform group-hover:-translate-y-2 transition-transform duration-500">
-              <img 
-                src="/nin.jpg" 
-                alt="Beimnet Tadesse" 
-                className="w-full h-auto aspect-[4/5] object-cover rounded-2xl filter drop-shadow-md"
-              />
-              
-              {/* Overlay Sparkles */}
-              <div className="absolute top-4 left-4 bg-card/80 backdrop-blur-md p-2.5 rounded-xl border border-border/20 shadow-glow animate-float">
-                <Sparkles className="w-5 h-5 text-primary" />
-              </div>
-              <div className="absolute bottom-4 right-4 bg-card/80 backdrop-blur-md p-2.5 rounded-xl border border-border/20 shadow-glow animate-float" style={{ animationDelay: '2s' }}>
-                <Code className="w-5 h-5 text-primary" />
+            <div className="dark:gradient-border rounded-[2rem] transform group-hover:-translate-y-2 transition-transform duration-500">
+              {/* 3D Scene Box */}
+              <div className="relative bg-card rounded-[2rem] p-2 shadow-card border border-border z-10 overflow-hidden">
+                {/* Fixed-height container for the Canvas */}
+                <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '360px' }}>
+                  <About3DScene />
+
+                  {/* Overlay Sparkles */}
+                  <div className="absolute top-4 left-4 bg-card/80 backdrop-blur-md p-2.5 rounded-xl border border-border shadow-glow animate-float pointer-events-none">
+                    <Sparkles className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="absolute bottom-4 right-4 bg-card/80 backdrop-blur-md p-2.5 rounded-xl border border-border shadow-glow animate-float pointer-events-none" style={{ animationDelay: '2s' }}>
+                    <Code className="w-5 h-5 text-primary" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Text and Badges */}
-          <div className="w-full lg:w-2/3 space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-normal bg-card/40 backdrop-blur-sm p-8 rounded-3xl border border-border/10 shadow-sm">
-              <p>
-                I’m <span className="text-primary font-bold">Beimnet Tadesse</span>, a Software Engineering student at Addis Ababa Science and Technology University and also studying Marketing Management at Saint Mary University. My journey in tech started with curiosity and has grown into a passion for building web applications and digital solutions that are both functional and user-focused.
-              </p>
-              <p>
-                I’ve worked on projects both individually and in teams, creating dynamic websites and applications using modern technologies like React, Next.js, and Node.js. Alongside development, I’m exploring digital marketing strategies, managing social media campaigns, and analyzing metrics to make online experiences more engaging.
-              </p>
+          <div className="w-full lg:w-2/3 flex flex-col gap-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="dark:gradient-border rounded-2xl">
+              <div className="bg-card/40 backdrop-blur-md p-8 rounded-2xl shadow-card border border-border relative overflow-hidden group hover:shadow-glow transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="space-y-6 text-lg text-foreground/90 leading-relaxed relative z-10">
+                  <p>
+                    I’m <span className="text-primary font-bold">Beimnet Tadesse</span>, a Software Engineering student at Addis Ababa Science and Technology University and also studying Marketing Management at Saint Mary University. My journey in tech started with curiosity and has grown into a passion for building web applications and digital solutions that are both functional and user-focused.
+                  </p>
+                  <p>
+                    I’ve worked on projects both individually and in teams, creating dynamic websites and applications using modern technologies like React, Next.js, and Node.js. Alongside development, I’m exploring digital marketing strategies, managing social media campaigns, and analyzing metrics to make online experiences more engaging.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Trait Badges (Small Boxes) */}
             <div className="flex flex-wrap gap-4 px-2">
-              <div className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-card rounded-xl border border-primary/20 shadow-sm hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group cursor-default">
-                <Users className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-sm font-semibold text-foreground/90 tracking-wide">Team Work</span>
-              </div>
-              <div className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-card rounded-xl border border-primary/20 shadow-sm hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group cursor-default">
-                <BookOpen className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-sm font-semibold text-foreground/90 tracking-wide">Active Learning</span>
-              </div>
-              <div className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-card rounded-xl border border-primary/20 shadow-sm hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group cursor-default">
-                <Lightbulb className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-sm font-semibold text-foreground/90 tracking-wide">Problem Solver</span>
-              </div>
+              {[
+                { icon: Users, label: "Team Work" },
+                { icon: BookOpen, label: "Active Learning" },
+                { icon: Lightbulb, label: "Problem Solver" }
+              ].map((trait, i) => (
+                <div key={i} className="dark:gradient-border rounded-xl">
+                  <div className="flex items-center gap-2.5 px-5 py-2.5 bg-gradient-card rounded-xl border border-border shadow-sm hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group cursor-default">
+                    <trait.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-sm font-semibold text-foreground/90 tracking-wide">{trait.label}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
