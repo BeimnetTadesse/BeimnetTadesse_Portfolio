@@ -31,7 +31,7 @@ export function SkillsSection() {
         <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-primary/3 rounded-full animate-float" style={{ animationDelay: '1s' }} />
         
         {/* Geometric Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 dark:hidden">
           <div className="grid grid-cols-12 h-full">
             {Array.from({ length: 144 }).map((_, i) => (
               <div key={i} className="border border-primary/20" />

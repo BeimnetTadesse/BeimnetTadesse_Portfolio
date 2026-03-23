@@ -74,7 +74,7 @@ export function HeroSection() {
           className="absolute top-1/2 right-20 w-24 h-24 bg-primary/3 rounded-full animate-float blur-md"
           style={{ animationDelay: "1s" }}
         />
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 dark:hidden">
           <div className="grid grid-cols-12 h-full">
             {Array.from({ length: 144 }).map((_, i) => (
               <div key={i} className="border border-primary/20" />
