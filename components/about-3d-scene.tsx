@@ -83,10 +83,22 @@ function GiftBox() {
 
 function Robot() {
   const groupRef = useRef<THREE.Group>(null!);
-  useFrame(({ clock }) => {
+  useFrame(({ clock, mouse }) => {
     if (groupRef.current) {
-      // Gentle idle sway
-      groupRef.current.rotation.y = Math.sin(clock.elapsedTime * 0.65) * 0.1;
+      // Gentle idle sway + Mouse follow
+      const targetRotationY = mouse.x * 0.5;
+      const targetRotationX = -mouse.y * 0.2;
+      
+      groupRef.current.rotation.y = THREE.MathUtils.lerp(
+        groupRef.current.rotation.y,
+        targetRotationY + Math.sin(clock.elapsedTime * 0.65) * 0.1,
+        0.1
+      );
+      groupRef.current.rotation.x = THREE.MathUtils.lerp(
+        groupRef.current.rotation.x,
+        targetRotationX,
+        0.1
+      );
     }
   });
 
@@ -309,7 +321,7 @@ export function About3DScene() {
 
   return (
     <div
-      className="w-full h-full inset-0 absolute rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing transition-colors duration-400"
+      className="w-full h-full inset-0 absolute rounded-2xl overflow-hidden transition-colors duration-400"
       style={{
         background: isDark
           ? "linear-gradient(160deg, #0a0b14 0%, #121424 100%)"
@@ -324,14 +336,7 @@ export function About3DScene() {
         <pointLight position={[0, 5, 4]} intensity={isDark ? 3.0 : 2.2} color={isDark ? "#00ffff" : "#ffffff"} />
         <pointLight position={[2, -1, 3]} intensity={isDark ? 1.5 : 0.9} color={isDark ? "#ff00ff" : "#f8d0c8"} />
 
-        <PresentationControls
-          global
-          rotation={[0.05, 0.2, 0]}
-          polar={[-Math.PI / 4, Math.PI / 4]}
-          azimuth={[-Math.PI / 2, Math.PI / 2]}
-        >
-          <Robot />
-        </PresentationControls>
+        <Robot />
       </Canvas>
     </div>
   );
