@@ -2,7 +2,7 @@
 
 import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { PresentationControls, Float } from "@react-three/drei";
+import { Float } from "@react-three/drei";
 import * as THREE from "three";
 import { useTheme } from "next-themes";
 
@@ -324,17 +324,17 @@ export function About3DScene() {
       className="w-full h-full inset-0 absolute rounded-2xl overflow-hidden transition-colors duration-400"
       style={{
         background: isDark
-          ? "linear-gradient(160deg, #0a0b14 0%, #121424 100%)"
+          ? "linear-gradient(160deg, #0c0a08 0%, #1a1612 100%)"
           : "linear-gradient(160deg, #fdf6ef 0%, #fae8dc 100%)"
       }}
     >
       <Canvas camera={{ position: [0, 0, 5.6], fov: 44 }}>
         {/* Dynamic lighting based on theme */}
-        <ambientLight intensity={isDark ? 1.5 : 3.2} color={isDark ? "#ccd6ff" : "#fff6ee"} />
-        <directionalLight position={[5, 10, 6]} intensity={isDark ? 3.5 : 2.8} color={isDark ? "#88b0ff" : "#fff8f0"} />
-        <directionalLight position={[-4, 3, 4]} intensity={isDark ? 1.8 : 1.4} color={isDark ? "#b088ff" : "#fde8d0"} />
-        <pointLight position={[0, 5, 4]} intensity={isDark ? 3.0 : 2.2} color={isDark ? "#00ffff" : "#ffffff"} />
-        <pointLight position={[2, -1, 3]} intensity={isDark ? 1.5 : 0.9} color={isDark ? "#ff00ff" : "#f8d0c8"} />
+        <ambientLight intensity={isDark ? 1.5 : 3.2} color={isDark ? "#fff2e0" : "#fff6ee"} />
+        <directionalLight position={[5, 10, 6]} intensity={isDark ? 3.5 : 2.8} color={isDark ? "#ffe0b0" : "#fff8f0"} />
+        <directionalLight position={[-4, 3, 4]} intensity={isDark ? 1.8 : 1.4} color={isDark ? "#fde8d0" : "#fde8d0"} />
+        <pointLight position={[0, 5, 4]} intensity={isDark ? 3.0 : 2.2} color={isDark ? "#ffaa44" : "#ffffff"} />
+        <pointLight position={[2, -1, 3]} intensity={isDark ? 1.5 : 0.9} color={isDark ? "#ff8c42" : "#f8d0c8"} />
 
         <Robot />
       </Canvas>

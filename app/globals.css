@@ -19,17 +19,17 @@
 
   /* 3️⃣ Dark theme — vibrant Cyan-to-Purple gradient as per reference */
   .dark {
-    --background: 232 40% 5%;    /* Deepest navy/black */
-    --foreground: 210 20% 92%;
-    --primary: 188 100% 50%;    /* Bright Cyan (match image) */
-    --secondary: 265 85% 75%;   /* Soft Purple/Violet (match image) */
-    --card: 230 35% 8%;
-    --border: 230 30% 25%;      /* Increased border visibility for dark mode contrast */
-    --gradient-warm: linear-gradient(160deg, hsl(232 40% 5%), hsl(235 35% 7%));
+    --background: 25 15% 5%;    /* Deep warm black */
+    --foreground: 30 20% 92%;
+    --primary: 35 60% 50%;     /* Rich Golden Brown */
+    --secondary: 35 40% 70%;    /* Warm Tan/Amber */
+    --card: 25 15% 10%;
+    --border: 35 15% 25%;       /* Increased border visibility for dark mode contrast */
+    --gradient-warm: linear-gradient(160deg, hsl(25 15% 5%), hsl(30 15% 8%));
     
     /* This gradient will be used for text and primary buttons */
-    --gradient-brown: linear-gradient(to right, #00e5ff, #448aff, #b388ff);
-    --gradient-card: linear-gradient(160deg, hsl(230 35% 10%), hsl(232 30% 12%));
+    --gradient-brown: linear-gradient(to right, #8b4513, #cd853f, #deb887);
+    --gradient-card: linear-gradient(160deg, hsl(25 15% 12%), hsl(25 15% 16%));
   }
 
   body {
@@ -71,7 +71,7 @@
 
   /* Dark mode glow adjustments */
   .dark .shadow-glow {
-    box-shadow: 0 0 25px hsl(188 100% 50% / 0.15);
+    box-shadow: 0 0 25px hsl(35 60% 50% / 0.15);
   }
   
   .dark .shadow-card {
@@ -85,8 +85,8 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 70% 50% at 50% 0%, hsl(188 100% 40% / 0.1) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 60% at 80% 80%, hsl(265 85% 50% / 0.08) 0%, transparent 70%);
+      radial-gradient(ellipse 70% 50% at 50% 0%, hsl(35 60% 40% / 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 80%, hsl(25 40% 50% / 0.08) 0%, transparent 70%);
     z-index: 0;
   }
 }

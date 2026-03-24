@@ -37,7 +37,7 @@ export function ContactSection() {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
     }
   };

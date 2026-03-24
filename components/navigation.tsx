@@ -4,6 +4,16 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sparkles, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
+const navItems = [
+  { id: "home", label: "Home", href: "#home" },
+  { id: "about", label: "About Me", href: "#about" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "services", label: "Services", href: "#services" },
+  { id: "education", label: "Education", href: "#education" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -11,16 +21,6 @@ export function Navigation() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
-  const navItems = [
-    { id: "home", label: "Home", href: "#home" },
-    { id: "about", label: "About Me", href: "#about" },
-    { id: "projects", label: "Projects", href: "#projects" },
-    { id: "skills", label: "Skills", href: "#skills" },
-    { id: "services", label: "Services", href: "#services" },
-    { id: "education", label: "Education", href: "#education" },
-    { id: "contact", label: "Contact", href: "#contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
